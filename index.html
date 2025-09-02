@@ -1,106 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>GoobLagoon Gazette</title>
+<meta charset="UTF-8">
+<title>GoobLagoon Gazette</title>
+<style>
+/* Global Styles */
+body {
+  font-family: Georgia, serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #111;
+}
+
+/* Header */
+header {
+  background: #0077aa;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+header h1 { margin: 0; }
+header p { margin-top: 5px; font-style: italic; }
+
+/* Ticker */
+.ticker {
+  background: #ffcc00;
+  padding: 8px 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-weight: bold;
+}
+.ticker p {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  background: #005577;
+  margin: 0;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+}
+
+/* Columns */
+.column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Panels */
+.panel {
+  background: white;
+  padding: 15px;
+  border: 1px solid #ccc;
+}
+
+/* Featured panel */
+.panel.featured {
+  border: 2px solid #0077aa;
+  background: #e0f7ff;
+}
+
+/* Ads */
+.panel.ads {
+  background: #fff8dc;
+}
+
+/* Review Form */
+.panel.review input, 
+.panel.review textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+  border: 1px solid #999;
+}
+.panel.review button {
+  padding: 8px;
+  background: #0077aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.panel.review button:hover {
+  background: #005577;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #0077aa;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+}
+</style>
 </head>
 <body>
 
-<h1>📰 GoobLagoon Gazette</h1>
-<p>Your source for all waterpark news & gossip!</p>
+<header>
+  <h1>📰 GoobLagoon Gazette</h1>
+  <p>Your source for all waterpark news & gossip!</p>
+</header>
 
-<!-- Breaking News Ticker -->
-<p><b>BREAKING:</b> Wave Pool Machine Stuck | Rubber Duck Shortage Delays Park Opening | Lifeguard Claims Bigfoot Sighting!</p>
-<hr>
+<div class="ticker">
+  <p>BREAKING: Wave Pool Machine Stuck | Rubber Duck Shortage Delays Park Opening | Lifeguard Claims Bigfoot Sighting!</p>
+</div>
 
-<!-- Navigation -->
-<p>
-  <a href="#">Home</a> | 
-  <a href="#">Breaking</a> | 
-  <a href="#">Gossip</a> | 
-  <a href="#">Reviews</a> | 
-  <a href="#">About</a>
-</p>
-<hr>
+<nav>
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Breaking</a></li>
+    <li><a href="#">Gossip</a></li>
+    <li><a href="#">Reviews</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+</nav>
 
-<!-- Main Content -->
-<table border="1" cellspacing="5" cellpadding="10" width="100%">
-  <tr>
-    <!-- Left Column: Main Articles -->
-    <td valign="top" width="50%">
-      <h2>Featured Article</h2>
-      <div>
-        <h3>🌊 Mega Slide Contest Goes Wild!</h3>
-        <p>Guests sent flying into the lazy river after the Mega Slide cannonball contest got out of control. Officials called it "the perfect splash."</p>
-      </div>
+<div class="container">
 
-      <div>
-        <h3>💦 Lifeguard Spots Bigfoot on Slides</h3>
-        <p>"It had flip-flops!" said the eyewitness. Park authorities are skeptical.</p>
-      </div>
+  <!-- Left Column -->
+  <div class="column left">
+    <div class="panel featured">
+      <h2>🌊 Mega Slide Contest Goes Wild!</h2>
+      <p>Guests sent flying into the lazy river after the Mega Slide cannonball contest got out of control. Officials called it "the perfect splash."</p>
+    </div>
 
-      <div>
-        <h3>🍭 Churros Rain Over Wave Pool</h3>
-        <p>Guests delighted as churros mysteriously fell from above. No one knows why.</p>
-      </div>
+    <div class="panel">
+      <h3>💦 Lifeguard Spots Bigfoot on Slides</h3>
+      <p>"It had flip-flops!" said the eyewitness. Park authorities are skeptical.</p>
+    </div>
 
-      <div>
-        <h3>🎵 DJ Accidentally Plays Whale Sounds</h3>
-        <p>DJ says it was “part of the vibe,” guests mostly confused but amused.</p>
-      </div>
-    </td>
+    <div class="panel">
+      <h3>🍭 Churros Rain Over Wave Pool</h3>
+      <p>Guests delighted as churros mysteriously fell from above. No one knows why.</p>
+    </div>
+  </div>
 
-    <!-- Right Column: Sidebar -->
-    <td valign="top" width="50%">
-      <!-- Secondary Articles -->
-      <h2>Other Stories</h2>
-      <div>
-        <h3>🏊 Lazy River Reports Slow Traffic</h3>
-        <p>Visitors report slight congestion; management suggests paddling faster.</p>
-      </div>
+  <!-- Right Column -->
+  <div class="column right">
+    <div class="panel">
+      <h3>🏊 Lazy River Reports Slow Traffic</h3>
+      <p>Visitors report slight congestion; management suggests paddling faster.</p>
+    </div>
 
-      <div>
-        <h3>🎈 Balloon Animals Attack Slide Riders</h3>
-        <p>Staff claims it was "an inflatable uprising." Guests laughed and screamed.</p>
-      </div>
+    <div class="panel">
+      <h3>🎈 Balloon Animals Attack Slide Riders</h3>
+      <p>Staff claims it was "an inflatable uprising." Guests laughed and screamed.</p>
+    </div>
 
-      <div>
-        <h3>🕶️ Sunglasses Sales Skyrocket</h3>
-        <p>Apparently everyone wants to look cool while getting soaked.</p>
-      </div>
+    <div class="panel ads">
+      <h3>Sponsored Ads</h3>
+      <p><b>Goober Juice™</b> — Now 50% More Goob!</p>
+      <p><b>Splashy Sunglasses</b> — Guaranteed On Slide!</p>
+      <p><b>Rubber Duck Rescue Kits</b> — Don't Lose Your Duck!</p>
+    </div>
 
-      <div>
-        <h3>💧 Fountain Malfunction Causes Mini Tsunami</h3>
-        <p>Mini tsunami caught guests off guard, but no injuries reported.</p>
-      </div>
-
-      <!-- Sponsored Ads -->
-      <h2>Sponsored Ads</h2>
-      <div>
-        <p><b>Goober Juice™</b> — Now 50% More Goob!</p>
-        <p><b>Splashy Sunglasses</b> — Guaranteed On Slide!</p>
-        <p><b>Rubber Duck Rescue Kits</b> — Don't Lose Your Duck!</p>
-      </div>
-
-      <!-- Review Form -->
-      <h2>💌 Write to the Editor</h2>
+    <div class="panel review">
+      <h3>💌 Write to the Editor</h3>
       <form name="review" method="POST" data-netlify="true">
-        <p>
-          Name:<br>
-          <input type="text" name="name" required>
-        </p>
-        <p>
-          Message:<br>
-          <textarea name="message" rows="4" cols="40" required></textarea>
-        </p>
-        <p><input type="submit" value="Submit"></p>
+        <input type="text" name="name" placeholder="Your Name" required>
+        <textarea name="message" placeholder="Share rumors, tips, or gossip..." rows="4" required></textarea>
+        <button type="submit">Submit</button>
       </form>
-    </td>
-  </tr>
-</table>
+    </div>
+  </div>
 
-<hr>
-<p>© 2025 GoobLagoon Gazette — All splash rights reserved 🏊</p>
+</div>
+
+<footer>
+  <p>© 2025 GoobLagoon Gazette — All splash rights reserved 🏊</p>
+</footer>
 
 </body>
 </html>
