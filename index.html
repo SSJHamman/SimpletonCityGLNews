@@ -9,55 +9,110 @@
 <body>
   <!-- Header / Logo -->
   <header>
-    <h1>📰 GoobLagoon Gazette</h1>
-    <p>Your #1 source for waterpark news and gossip!</p>
+    <div class="logo">
+      <h1>📰 GoobLagoon Gazette</h1>
+      <p>Your source for all waterpark news & gossip!</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Breaking</a></li>
+        <li><a href="#">Gossip</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">Weather</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Breaking News Ticker -->
+  <!-- Ticker -->
   <div class="ticker">
-    <p>BREAKING: Wave Pool Machine Stuck on Tsunami Mode | Rubber Duck Shortage Delays Park Opening | Lifeguard Claims Bigfoot Sighting!</p>
+    <p>BREAKING: Wave Pool Machine Stuck | Rubber Duck Shortage Delays Park Opening | Lifeguard Claims Bigfoot Sighting!</p>
   </div>
 
-  <main>
-    <!-- Featured Story -->
-    <section class="featured">
-      <h2>🌊 BREAKING NEWS: Cannonball Contest Goes Wrong!</h2>
-      <img src="https://via.placeholder.com/800x300?text=GoobLagoon+Splash" alt="Splash Image">
-      <p>Guests were sent flying into the lazy river after the Mega Slide cannonball contest went out of control. Park officials say “it was a perfect splash.”</p>
-    </section>
+  <main class="container">
+    <!-- Left Column: Main Articles -->
+    <div class="column left">
+      <div class="article featured">
+        <h2>🌊 Mega Slide Contest Goes Wild!</h2>
+        <img src="https://via.placeholder.com/700x250?text=Mega+Slide+Chaos" alt="Mega Slide Chaos">
+        <p>Guests sent flying into the lazy river after the Mega Slide cannonball contest got out of control. Officials called it "the perfect splash."</p>
+      </div>
 
-    <!-- Other Stories -->
-    <section class="stories">
-      <article>
-        <h3>💦 Lifeguard Claims to Have Seen Bigfoot on the Slides</h3>
-        <p>"I swear it had a towel and flip-flops!" said an eyewitness.</p>
-      </article>
+      <div class="article">
+        <h3>💦 Lifeguard Spots Bigfoot on Slides</h3>
+        <p>"It had flip-flops!" said the eyewitness. Park authorities are skeptical.</p>
+      </div>
 
-      <article>
-        <h3>🍭 Churros Found Floating in Wave Pool</h3>
-        <p>Park employees report a mysterious rain of churros over the Wave Pool area. Guests delighted.</p>
-      </article>
-    </section>
+      <div class="article">
+        <h3>🍭 Churros Rain Over Wave Pool</h3>
+        <p>Guests delighted as churros mysteriously fell from above. No one knows why.</p>
+      </div>
 
-    <!-- Sponsored Ads -->
-    <aside class="ads">
-      <h3>Sponsored</h3>
-      <div class="ad">Buy Goober Juice™ — Now 50% More Goob!</div>
-      <div class="ad">Splashy Sunglasses — Guaranteed to Stay On While Sliding!</div>
-      <div class="ad">Rubber Duck Rescue Kits — Don't Lose Your Duck!</div>
-    </aside>
+      <div class="article">
+        <h3>🎵 Goob Lagoon DJ Accidentally Plays Whale Sounds</h3>
+        <p>DJ says it was “part of the vibe,” guests mostly confused but amused.</p>
+      </div>
+    </div>
 
-    <!-- Reviews / Letters to the Editor -->
-    <section class="review-form">
-      <h2>💌 Write to the Editor</h2>
-      <form name="review" method="POST" data-netlify="true">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <textarea name="message" placeholder="Write your review, rumor, or gossip..." required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
+    <!-- Middle Column: Secondary Articles -->
+    <div class="column middle">
+      <div class="article small">
+        <h4>🏊 Lazy River Reports Slow Traffic</h4>
+        <p>Visitors report slight congestion; management suggests paddle faster.</p>
+      </div>
+
+      <div class="article small">
+        <h4>🎈 Balloon Animals Attack Slide Riders</h4>
+        <p>Staff claims it was "an inflatable uprising." Guests laughed and screamed.</p>
+      </div>
+
+      <div class="article small">
+        <h4>🕶️ Sunglasses Sales Skyrocket</h4>
+        <p>Apparently everyone wants to look cool while getting soaked.</p>
+      </div>
+
+      <div class="article small">
+        <h4>💧 Fountain Malfunction Causes Mini Tsunami</h4>
+        <p>Mini tsunami caught guests off guard, but no injuries reported.</p>
+      </div>
+    </div>
+
+    <!-- Right Column: Sidebar -->
+    <div class="column right">
+      <div class="sidebar-section">
+        <h4>Sponsored</h4>
+        <div class="ad">Goober Juice™ — Now 50% More Goob!</div>
+        <div class="ad">Splashy Sunglasses — Guaranteed On Slide!</div>
+        <div class="ad">Rubber Duck Rescue Kits — Don't Lose Your Duck!</div>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Quick Gossip</h4>
+        <ul>
+          <li>Employee caught sneaking churros into river.</li>
+          <li>Mysterious rubber duck spotted in Wave Pool.</li>
+          <li>New slide rumored to have “secret tunnel.”</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-section">
+        <h4>Weather</h4>
+        <p>🌞 82°F – Splashy, chance of cannonballs</p>
+      </div>
+
+      <div class="sidebar-section review-form">
+        <h4>💌 Write to the Editor</h4>
+        <form name="review" method="POST" data-netlify="true">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <textarea name="message" placeholder="Share rumors, tips, or gossip..." required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
   </main>
 
+  <!-- Footer -->
   <footer>
     <p>© 2025 GoobLagoon Gazette — All splash rights reserved 🏊</p>
   </footer>
