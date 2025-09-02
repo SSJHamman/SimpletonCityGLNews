@@ -1,0 +1,142 @@
+/* Global Styles */
+body {
+  font-family: Georgia, serif;
+  margin: 0;
+  padding: 0;
+  background: #f1f9ff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #0077aa;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Ticker */
+.ticker {
+  background: #ffcc00;
+  padding: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker p {
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main Content */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px;
+  gap: 20px;
+}
+
+.featured {
+  flex: 1 1 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.featured img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.stories {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.stories article {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+/* Ads */
+.ads {
+  flex: 1 1 200px;
+  background: #fff8dc;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.1);
+}
+
+.ad {
+  background: #ffeaaa;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Review Form */
+.review-form {
+  flex: 1 1 500px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.review-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.review-form button {
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #0077aa;
+  color: white;
+  cursor: pointer;
+}
+
+.review-form button:hover {
+  background: #005577;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #0077aa;
+  color: white;
+  padding: 15px;
+  margin-top: 20px;
+}
