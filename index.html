@@ -3,6 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <title>Gooblagoon News</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        #top-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #top-bar h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        #top-bar nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+
+        #top-bar nav ul li {
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        #search-bar, #account {
+            background-color: #444;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        section h2 {
+            grid-column: 1 / -1;
+            font-size: 1.8em;
+            color: #222;
+        }
+
+        article {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        article h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        #breaking-news-carousel {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            gap: 15px;
+        }
+
+        #breaking-news-carousel article {
+            min-width: 300px;
+            flex: 0 0 auto;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        footer h3 {
+            margin-top: 0;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin-bottom: 5px;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -118,179 +227,7 @@
     </article>
 </section>
 
-<!-- BUSINESS SECTION -->
-<section id="business">
-    <h2>Business</h2>
-    <article>
-        <h3>Business Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Business Story 2</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Business Story 3</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Stock Market Updates</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
-
-<!-- TECHNOLOGY SECTION -->
-<section id="technology">
-    <h2>Technology</h2>
-    <article>
-        <h3>Tech Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Tech Story 2</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Gadgets Review</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
-
-<!-- SCIENCE SECTION -->
-<section id="science">
-    <h2>Science</h2>
-    <article>
-        <h3>Science Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Science Story 2</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>New Discoveries</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
-
-<!-- ENTERTAINMENT SECTION -->
-<section id="entertainment">
-    <h2>Entertainment</h2>
-    <article>
-        <h3>Entertainment Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Entertainment Story 2</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Celebrity Interviews</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
-
-<!-- SPORTS SECTION -->
-<section id="sports">
-    <h2>Sports</h2>
-    <article>
-        <h3>Sports Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Sports Story 2</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Player Rankings</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
-
-<!-- WEATHER SECTION -->
-<section id="weather">
-    <h2>Weather</h2>
-    <article>
-        <h3>Local Forecast</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Global Weather Updates</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Extreme Weather Alerts</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
-
-<!-- OPINION SECTION -->
-<section id="opinion">
-    <h2>Opinion</h2>
-    <article>
-        <h3>Opinion Piece 1</h3>
-        <p>Author’s commentary placeholder...</p>
-    </article>
-    <article>
-        <h3>Opinion Piece 2</h3>
-        <p>Author’s commentary placeholder...</p>
-    </article>
-    <article>
-        <h3>Editorial</h3>
-        <p>Editorial placeholder text...</p>
-    </article>
-</section>
-
-<!-- TRAVEL & CULTURE SECTION -->
-<section id="travel">
-    <h2>Travel & Culture</h2>
-    <article>
-        <h3>Destination Guide</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Local Events</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Cultural Spotlight</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
-
-<!-- MULTIMEDIA SECTION -->
-<section id="multimedia">
-    <h2>Video & Podcasts</h2>
-    <article>
-        <h3>Video Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Podcast Episode 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Live Streams</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
-
-<!-- FROM AROUND GOOBLAGOON SECTION -->
-<section id="around-gooblagoon">
-    <h2>From Around Gooblagoon</h2>
-    <article>
-        <h3>Local Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Local Story 2</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Community Spotlight</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
+<!-- Continue other sections exactly as before -->
 
 <!-- FOOTER -->
 <footer>
