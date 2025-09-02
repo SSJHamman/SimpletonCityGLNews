@@ -1,282 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Gooblagoon News</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<title>Gooblagoon News</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef6ff;
+    color: #333;
+}
 
-        /* HEADER */
-        header {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 15px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+/* HEADER */
+header {
+    background-color: #004466;
+    color: #fff;
+    padding: 15px 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ffcc00;
+}
+#search-bar, #account {
+    background-color: #006699;
+    padding: 6px 12px;
+    border-radius: 3px;
+    color: #fff;
+    margin-left: 10px;
+    cursor: pointer;
+}
 
-        #top-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
+/* BREAKING NEWS CAROUSEL */
+#breaking-news-carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 15px;
+    background: linear-gradient(to right, #ffe6e6, #fff2e6);
+}
+#breaking-news-carousel article {
+    min-width: 350px;
+    flex: 0 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 15px;
+    border-top: 5px solid #ff6600;
+}
+#breaking-news-carousel article h2 {
+    font-size: 1.4em;
+    color: #b30000;
+}
+#breaking-news-carousel article .badge {
+    display: inline-block;
+    background-color: #ff3300;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
 
-        #top-bar h1 {
-            margin: 0;
-            font-size: 2.2em;
-            color: #ffcc00;
-        }
+/* MAIN LAYOUT */
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+    padding: 20px 40px;
+}
 
-        #top-bar nav ul {
-            list-style: none;
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0;
-            margin: 0;
-        }
+/* SECTIONS */
+section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+section h2 {
+    grid-column: 1 / -1;
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #004466;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
 
-        #top-bar nav ul li {
-            margin: 0 10px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
+/* ARTICLES */
+article {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+article h3 {
+    margin-top: 0;
+    color: #004466;
+}
+article img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
-        #top-bar nav ul li:hover {
-            color: #ffcc00;
-        }
+/* FEATURED STORY */
+.featured {
+    grid-column: 1 / -1;
+    background-color: #fffbcc;
+    border-radius: 0 50px 0 50px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.featured h2 {
+    font-size: 2.2em;
+    color: #b35900;
+}
 
-        #search-bar, #account {
-            background-color: #444;
-            padding: 6px 12px;
-            border-radius: 3px;
-            color: #fff;
-            margin-left: 10px;
-            cursor: pointer;
-        }
+/* SIDEBAR */
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+aside .widget {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+aside .widget h3 {
+    margin-top: 0;
+    color: #004466;
+}
 
-        /* BREAKING NEWS CAROUSEL */
-        #breaking-news-carousel {
-            display: flex;
-            overflow-x: auto;
-            padding: 20px;
-            gap: 15px;
-            background: linear-gradient(to right, #fffae6, #ffe6e6);
-        }
+/* FOOTER */
+footer {
+    background-color: #004466;
+    color: #fff;
+    padding: 30px 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+}
+footer h3 {
+    margin-top: 0;
+    color: #ffcc00;
+}
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+footer ul li {
+    margin-bottom: 5px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+footer ul li:hover {
+    color: #ffcc00;
+}
+footer p {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #ccc;
+}
 
-        #breaking-news-carousel article {
-            min-width: 350px;
-            flex: 0 0 auto;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            padding: 15px;
-            border-top: 5px solid #ffcc00;
-        }
-
-        #breaking-news-carousel article h2 {
-            font-size: 1.4em;
-            color: #b30000;
-        }
-
-        /* SECTIONS */
-        section {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 20px 40px;
-        }
-
-        section h2 {
-            grid-column: 1 / -1;
-            font-size: 2em;
-            margin-bottom: 10px;
-            color: #222;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-        }
-
-        article {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        article:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        article h3 {
-            margin-top: 0;
-            color: #444;
-        }
-
-        article img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
-
-        /* FEATURED STORY */
-        .featured {
-            grid-column: 1 / -1;
-            background-color: #ffe6cc;
-            border-radius: 0 50px 0 50px;
-            padding: 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        .featured h2 {
-            font-size: 2.2em;
-            color: #b35900;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #1a1a1a;
-            color: #fff;
-            padding: 30px 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 25px;
-        }
-
-        footer h3 {
-            margin-top: 0;
-            color: #ffcc00;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        footer ul li {
-            margin-bottom: 5px;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        footer ul li:hover {
-            color: #ffcc00;
-        }
-
-        footer p {
-            grid-column: 1 / -1;
-            text-align: center;
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #ccc;
-        }
-
-        /* HIGHLIGHT COLORS FOR SECTIONS */
-        #world { background-color: #e6f7ff; }
-        #politics { background-color: #ffe6f2; }
-        #business { background-color: #e6ffe6; }
-        #technology { background-color: #f2e6ff; }
-        #science { background-color: #fffbe6; }
-        #entertainment { background-color: #ffe6cc; }
-        #sports { background-color: #e6fff7; }
-        #weather { background-color: #e6f0ff; }
-        #opinion { background-color: #fff0f0; }
-        #travel { background-color: #f0fff0; }
-        #multimedia { background-color: #fff0ff; }
-        #around-gooblagoon { background-color: #f9f9f9; }
-    </style>
+/* COLORS PER SECTION */
+#rides { background-color: #e6f7ff; }
+#events { background-color: #fff0f0; }
+#food { background-color: #fff8e6; }
+#safety { background-color: #f0fff0; }
+#park-updates { background-color: #f9f9f9; }
+#staff { background-color: #f0f0ff; }
+</style>
 </head>
 <body>
 
 <header>
-    <div id="top-bar">
-        <h1>Gooblagoon</h1>
-        <nav>
-            <ul>
-                <li>Home</li>
-                <li>World</li>
-                <li>Politics</li>
-                <li>Business</li>
-                <li>Tech</li>
-                <li>Science</li>
-                <li>Entertainment</li>
-                <li>Sports</li>
-                <li>Weather</li>
-                <li>Opinion</li>
-                <li>Travel</li>
-            </ul>
-        </nav>
-        <div id="search-bar">Search...</div>
-        <div id="account">Login</div>
-    </div>
+    <h1>Gooblagoon News</h1>
+    <div id="search-bar">Search...</div>
 </header>
 
 <section id="breaking-news-carousel">
     <article>
-        <img src="https://via.placeholder.com/350x150" alt="Breaking News 1">
-        <h2>Breaking: Gooblagoon Launches New Initiative</h2>
-        <p>Placeholder subheadline text goes here for story 1.</p>
+        <span class="badge">Hot</span>
+        <img src="https://via.placeholder.com/350x150" alt="Breaking 1">
+        <h2>New Water Slide Opens This Week!</h2>
+        <p>Excitement builds as Gooblagoon unveils its biggest ride yet.</p>
     </article>
     <article>
-        <img src="https://via.placeholder.com/350x150" alt="Breaking News 2">
-        <h2>Global Economy Surges Unexpectedly</h2>
-        <p>Placeholder subheadline text goes here for story 2.</p>
+        <span class="badge">Exclusive</span>
+        <img src="https://via.placeholder.com/350x150" alt="Breaking 2">
+        <h2>Park Safety Guidelines Updated</h2>
+        <p>New safety measures introduced for summer visitors.</p>
     </article>
     <article>
-        <img src="https://via.placeholder.com/350x150" alt="Breaking News 3">
-        <h2>Tech Innovations in Gooblagoon Today</h2>
-        <p>Placeholder subheadline text goes here for story 3.</p>
-    </article>
-    <article>
-        <img src="https://via.placeholder.com/350x150" alt="Breaking News 4">
-        <h2>Exclusive: Gooblagoon Climate Report</h2>
-        <p>Placeholder subheadline text goes here for story 4.</p>
+        <span class="badge">New</span>
+        <img src="https://via.placeholder.com/350x150" alt="Breaking 3">
+        <h2>Food Court Renovation Complete</h2>
+        <p>Enjoy new flavors and a bigger seating area at Gooblagoon.</p>
     </article>
 </section>
 
-<section id="top-stories">
-    <div class="featured">
-        <h2>Featured Story</h2>
-        <img src="https://via.placeholder.com/800x300" alt="Featured Story">
-        <p>Main featured story placeholder content. Detailed summary goes here.</p>
-    </div>
-    <div class="secondary-stories">
-        <article>
-            <img src="https://via.placeholder.com/300x150" alt="Secondary 1">
-            <h3>Secondary Story 1</h3>
-            <p>Summary placeholder...</p>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/300x150" alt="Secondary 2">
-            <h3>Secondary Story 2</h3>
-            <p>Summary placeholder...</p>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/300x150" alt="Secondary 3">
-            <h3>Secondary Story 3</h3>
-            <p>Summary placeholder...</p>
-        </article>
-        <article>
-            <img src="https://via.placeholder.com/300x150" alt="Secondary 4">
-            <h3>Secondary Story 4</h3>
-            <p>Summary placeholder...</p>
-        </article>
-    </div>
-</section>
+<main>
+    <div>
+        <section class="featured">
+            <h2>Featured Story</h2>
+            <img src="https://via.placeholder.com/800x300" alt="Featured Story">
+            <p>Gooblagoon unveils a new wave pool that will thrill visitors of all ages.</p>
+        </section>
 
-<!-- Continue other sections like world, politics, etc., with same article structure and colors -->
+        <section id="rides">
+            <h2>Rides</h2>
+            <article>
+                <img src="https://via.placeholder.com/300x150" alt="Ride 1">
+                <h3>Thunder Splash</h3>
+                <p>The park’s most daring slide opens this weekend.</p>
+            </article>
+            <article>
+                <img src="https://via.placeholder.com/300x150" alt="Ride 2">
+                <h3>Lazy Lagoon</h3>
+                <p>Relax with the new lazy river experience.</p>
+            </article>
+        </section>
+
+        <section id="events">
+            <h2>Events</h2>
+            <article>
+                <img src="https://via.placeholder.com/300x150" alt="Event 1">
+                <h3>Summer Festival</h3>
+                <p>Live music, fireworks, and special shows await guests.</p>
+            </article>
+            <article>
+                <img src="https://via.placeholder.com/300x150" alt="Event 2">
+                <h3>Night Swim Party</h3>
+                <p>Exclusive evening pool party with DJ performances.</p>
+            </article>
+        </section>
+
+        <section id="food">
+            <h2>Food</h2>
+            <article>
+                <img src="https://via.placeholder.com/300x150" alt="Food 1">
+                <h3>New Smoothie Bar</h3>
+                <p>Fresh fruit smoothies and snacks are now available.</p>
+            </article>
+            <article>
+                <img src="https://via.placeholder.com/300x150" alt="Food 2">
+                <h3>Pizza Paradise</h3>
+                <p>Try the Gooblagoon special pizza flavors.</p>
+            </article>
+        </section>
+
+        <section id="safety">
+            <h2>Safety</h2>
+            <article>
+                <img src="https://via.placeholder.com/300x150" alt="Safety 1">
+                <h3>Lifeguard Training Updates</h3>
+                <p>New safety protocols ensure everyone’s fun is secure.</p>
+            </article>
+        </section>
+
+        <section id="park-updates">
+            <h2>Park Updates</h2>
+            <article>
+                <img src="https://via.placeholder.com/300x150" alt="Update 1">
+                <h3>Parking Lot Expansion</h3>
+                <p>More spaces to accommodate summer visitors.</p>
+            </article>
+        </section>
+    </div>
+
+    <aside>
+        <div class="widget">
+            <h3>Most Read</h3>
+            <ul>
+                <li>New Water Slide Opens</li>
+                <li>Food Court Renovation</li>
+                <li>Lazy Lagoon Review</li>
+            </ul>
+        </div>
+        <div class="widget">
+            <h3>Trending</h3>
+            <ul>
+                <li>Thunder Splash Thrills</li>
+                <li>Summer Festival</li>
+                <li>Night Swim Party</li>
+            </ul>
+        </div>
+        <div class="widget">
+            <h3>Upcoming Events</h3>
+            <ul>
+                <li>Wave Pool Launch</li>
+                <li>Fireworks Show</li>
+                <li>DJ Night</li>
+            </ul>
+        </div>
+    </aside>
+</main>
 
 <footer>
     <div>
         <h3>About Gooblagoon</h3>
-        <p>Placeholder text about the company.</p>
+        <p>News, updates, and all the latest happenings at the waterpark.</p>
     </div>
     <div>
         <h3>Contact</h3>
@@ -288,15 +325,13 @@
             <li>Facebook</li>
             <li>Twitter</li>
             <li>Instagram</li>
-            <li>TikTok</li>
         </ul>
     </div>
     <div>
         <h3>Newsletter</h3>
-        <p>Subscribe placeholder text...</p>
+        <p>Subscribe to get the latest waterpark news!</p>
     </div>
     <p>© 2025 Gooblagoon News</p>
 </footer>
-
 </body>
 </html>
