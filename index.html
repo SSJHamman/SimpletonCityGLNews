@@ -2,119 +2,105 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GoobLagoon Gazette</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Header / Logo -->
-  <header>
-    <div class="logo">
-      <h1>📰 GoobLagoon Gazette</h1>
-      <p>Your source for all waterpark news & gossip!</p>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Breaking</a></li>
-        <li><a href="#">Gossip</a></li>
-        <li><a href="#">Reviews</a></li>
-        <li><a href="#">Weather</a></li>
-        <li><a href="#">About</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Ticker -->
-  <div class="ticker">
-    <p>BREAKING: Wave Pool Machine Stuck | Rubber Duck Shortage Delays Park Opening | Lifeguard Claims Bigfoot Sighting!</p>
-  </div>
+<h1>📰 GoobLagoon Gazette</h1>
+<p>Your source for all waterpark news & gossip!</p>
 
-  <main class="container">
+<!-- Breaking News Ticker -->
+<p><b>BREAKING:</b> Wave Pool Machine Stuck | Rubber Duck Shortage Delays Park Opening | Lifeguard Claims Bigfoot Sighting!</p>
+<hr>
+
+<!-- Navigation -->
+<p>
+  <a href="#">Home</a> | 
+  <a href="#">Breaking</a> | 
+  <a href="#">Gossip</a> | 
+  <a href="#">Reviews</a> | 
+  <a href="#">About</a>
+</p>
+<hr>
+
+<!-- Main Content -->
+<table border="1" cellspacing="5" cellpadding="10" width="100%">
+  <tr>
     <!-- Left Column: Main Articles -->
-    <div class="column left">
-      <div class="article featured">
-        <h2>🌊 Mega Slide Contest Goes Wild!</h2>
-        <img src="https://via.placeholder.com/700x250?text=Mega+Slide+Chaos" alt="Mega Slide Chaos">
+    <td valign="top" width="50%">
+      <h2>Featured Article</h2>
+      <div>
+        <h3>🌊 Mega Slide Contest Goes Wild!</h3>
         <p>Guests sent flying into the lazy river after the Mega Slide cannonball contest got out of control. Officials called it "the perfect splash."</p>
       </div>
 
-      <div class="article">
+      <div>
         <h3>💦 Lifeguard Spots Bigfoot on Slides</h3>
         <p>"It had flip-flops!" said the eyewitness. Park authorities are skeptical.</p>
       </div>
 
-      <div class="article">
+      <div>
         <h3>🍭 Churros Rain Over Wave Pool</h3>
         <p>Guests delighted as churros mysteriously fell from above. No one knows why.</p>
       </div>
 
-      <div class="article">
-        <h3>🎵 Goob Lagoon DJ Accidentally Plays Whale Sounds</h3>
+      <div>
+        <h3>🎵 DJ Accidentally Plays Whale Sounds</h3>
         <p>DJ says it was “part of the vibe,” guests mostly confused but amused.</p>
       </div>
-    </div>
+    </td>
 
-    <!-- Middle Column: Secondary Articles -->
-    <div class="column middle">
-      <div class="article small">
-        <h4>🏊 Lazy River Reports Slow Traffic</h4>
-        <p>Visitors report slight congestion; management suggests paddle faster.</p>
+    <!-- Right Column: Sidebar -->
+    <td valign="top" width="50%">
+      <!-- Secondary Articles -->
+      <h2>Other Stories</h2>
+      <div>
+        <h3>🏊 Lazy River Reports Slow Traffic</h3>
+        <p>Visitors report slight congestion; management suggests paddling faster.</p>
       </div>
 
-      <div class="article small">
-        <h4>🎈 Balloon Animals Attack Slide Riders</h4>
+      <div>
+        <h3>🎈 Balloon Animals Attack Slide Riders</h3>
         <p>Staff claims it was "an inflatable uprising." Guests laughed and screamed.</p>
       </div>
 
-      <div class="article small">
-        <h4>🕶️ Sunglasses Sales Skyrocket</h4>
+      <div>
+        <h3>🕶️ Sunglasses Sales Skyrocket</h3>
         <p>Apparently everyone wants to look cool while getting soaked.</p>
       </div>
 
-      <div class="article small">
-        <h4>💧 Fountain Malfunction Causes Mini Tsunami</h4>
+      <div>
+        <h3>💧 Fountain Malfunction Causes Mini Tsunami</h3>
         <p>Mini tsunami caught guests off guard, but no injuries reported.</p>
       </div>
-    </div>
 
-    <!-- Right Column: Sidebar -->
-    <div class="column right">
-      <div class="sidebar-section">
-        <h4>Sponsored</h4>
-        <div class="ad">Goober Juice™ — Now 50% More Goob!</div>
-        <div class="ad">Splashy Sunglasses — Guaranteed On Slide!</div>
-        <div class="ad">Rubber Duck Rescue Kits — Don't Lose Your Duck!</div>
+      <!-- Sponsored Ads -->
+      <h2>Sponsored Ads</h2>
+      <div>
+        <p><b>Goober Juice™</b> — Now 50% More Goob!</p>
+        <p><b>Splashy Sunglasses</b> — Guaranteed On Slide!</p>
+        <p><b>Rubber Duck Rescue Kits</b> — Don't Lose Your Duck!</p>
       </div>
 
-      <div class="sidebar-section">
-        <h4>Quick Gossip</h4>
-        <ul>
-          <li>Employee caught sneaking churros into river.</li>
-          <li>Mysterious rubber duck spotted in Wave Pool.</li>
-          <li>New slide rumored to have “secret tunnel.”</li>
-        </ul>
-      </div>
+      <!-- Review Form -->
+      <h2>💌 Write to the Editor</h2>
+      <form name="review" method="POST" data-netlify="true">
+        <p>
+          Name:<br>
+          <input type="text" name="name" required>
+        </p>
+        <p>
+          Message:<br>
+          <textarea name="message" rows="4" cols="40" required></textarea>
+        </p>
+        <p><input type="submit" value="Submit"></p>
+      </form>
+    </td>
+  </tr>
+</table>
 
-      <div class="sidebar-section">
-        <h4>Weather</h4>
-        <p>🌞 82°F – Splashy, chance of cannonballs</p>
-      </div>
+<hr>
+<p>© 2025 GoobLagoon Gazette — All splash rights reserved 🏊</p>
 
-      <div class="sidebar-section review-form">
-        <h4>💌 Write to the Editor</h4>
-        <form name="review" method="POST" data-netlify="true">
-          <input type="text" name="name" placeholder="Your Name" required>
-          <textarea name="message" placeholder="Share rumors, tips, or gossip..." required></textarea>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 GoobLagoon Gazette — All splash rights reserved 🏊</p>
-  </footer>
 </body>
 </html>
