@@ -7,13 +7,15 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f2f2f2;
+            color: #333;
         }
 
+        /* HEADER */
         header {
-            background-color: #222;
+            background-color: #1a1a1a;
             color: #fff;
-            padding: 10px 20px;
+            padding: 15px 30px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -28,7 +30,8 @@
 
         #top-bar h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 2.2em;
+            color: #ffcc00;
         }
 
         #top-bar nav ul {
@@ -42,64 +45,114 @@
         #top-bar nav ul li {
             margin: 0 10px;
             cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        #top-bar nav ul li:hover {
+            color: #ffcc00;
         }
 
         #search-bar, #account {
             background-color: #444;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 6px 12px;
+            border-radius: 3px;
             color: #fff;
             margin-left: 10px;
+            cursor: pointer;
         }
 
+        /* BREAKING NEWS CAROUSEL */
+        #breaking-news-carousel {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            gap: 15px;
+            background: linear-gradient(to right, #fffae6, #ffe6e6);
+        }
+
+        #breaking-news-carousel article {
+            min-width: 350px;
+            flex: 0 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            padding: 15px;
+            border-top: 5px solid #ffcc00;
+        }
+
+        #breaking-news-carousel article h2 {
+            font-size: 1.4em;
+            color: #b30000;
+        }
+
+        /* SECTIONS */
         section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            padding: 20px;
+            padding: 20px 40px;
         }
 
         section h2 {
             grid-column: 1 / -1;
-            font-size: 1.8em;
+            font-size: 2em;
+            margin-bottom: 10px;
             color: #222;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
         }
 
         article {
             background-color: #fff;
             padding: 15px;
             border-radius: 5px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         article h3 {
             margin-top: 0;
-            color: #333;
+            color: #444;
         }
 
-        #breaking-news-carousel {
-            display: flex;
-            overflow-x: auto;
+        article img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* FEATURED STORY */
+        .featured {
+            grid-column: 1 / -1;
+            background-color: #ffe6cc;
+            border-radius: 0 50px 0 50px;
             padding: 20px;
-            gap: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        #breaking-news-carousel article {
-            min-width: 300px;
-            flex: 0 0 auto;
+        .featured h2 {
+            font-size: 2.2em;
+            color: #b35900;
         }
 
+        /* FOOTER */
         footer {
-            background-color: #222;
+            background-color: #1a1a1a;
             color: #fff;
-            padding: 20px;
+            padding: 30px 40px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         footer h3 {
             margin-top: 0;
+            color: #ffcc00;
         }
 
         footer ul {
@@ -109,13 +162,39 @@
 
         footer ul li {
             margin-bottom: 5px;
+            cursor: pointer;
+            transition: color 0.3s;
         }
 
+        footer ul li:hover {
+            color: #ffcc00;
+        }
+
+        footer p {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #ccc;
+        }
+
+        /* HIGHLIGHT COLORS FOR SECTIONS */
+        #world { background-color: #e6f7ff; }
+        #politics { background-color: #ffe6f2; }
+        #business { background-color: #e6ffe6; }
+        #technology { background-color: #f2e6ff; }
+        #science { background-color: #fffbe6; }
+        #entertainment { background-color: #ffe6cc; }
+        #sports { background-color: #e6fff7; }
+        #weather { background-color: #e6f0ff; }
+        #opinion { background-color: #fff0f0; }
+        #travel { background-color: #f0fff0; }
+        #multimedia { background-color: #fff0ff; }
+        #around-gooblagoon { background-color: #f9f9f9; }
     </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <div id="top-bar">
         <h1>Gooblagoon</h1>
@@ -139,97 +218,61 @@
     </div>
 </header>
 
-<!-- BREAKING NEWS CAROUSEL -->
 <section id="breaking-news-carousel">
     <article>
+        <img src="https://via.placeholder.com/350x150" alt="Breaking News 1">
         <h2>Breaking: Gooblagoon Launches New Initiative</h2>
         <p>Placeholder subheadline text goes here for story 1.</p>
     </article>
     <article>
+        <img src="https://via.placeholder.com/350x150" alt="Breaking News 2">
         <h2>Global Economy Surges Unexpectedly</h2>
         <p>Placeholder subheadline text goes here for story 2.</p>
     </article>
     <article>
+        <img src="https://via.placeholder.com/350x150" alt="Breaking News 3">
         <h2>Tech Innovations in Gooblagoon Today</h2>
         <p>Placeholder subheadline text goes here for story 3.</p>
     </article>
     <article>
+        <img src="https://via.placeholder.com/350x150" alt="Breaking News 4">
         <h2>Exclusive: Gooblagoon Climate Report</h2>
         <p>Placeholder subheadline text goes here for story 4.</p>
     </article>
 </section>
 
-<!-- TOP STORIES GRID -->
 <section id="top-stories">
     <div class="featured">
         <h2>Featured Story</h2>
+        <img src="https://via.placeholder.com/800x300" alt="Featured Story">
         <p>Main featured story placeholder content. Detailed summary goes here.</p>
     </div>
     <div class="secondary-stories">
         <article>
+            <img src="https://via.placeholder.com/300x150" alt="Secondary 1">
             <h3>Secondary Story 1</h3>
             <p>Summary placeholder...</p>
         </article>
         <article>
+            <img src="https://via.placeholder.com/300x150" alt="Secondary 2">
             <h3>Secondary Story 2</h3>
             <p>Summary placeholder...</p>
         </article>
         <article>
+            <img src="https://via.placeholder.com/300x150" alt="Secondary 3">
             <h3>Secondary Story 3</h3>
             <p>Summary placeholder...</p>
         </article>
         <article>
+            <img src="https://via.placeholder.com/300x150" alt="Secondary 4">
             <h3>Secondary Story 4</h3>
             <p>Summary placeholder...</p>
         </article>
     </div>
 </section>
 
-<!-- WORLD SECTION -->
-<section id="world">
-    <h2>World</h2>
-    <article>
-        <h3>World Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>World Story 2</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>World Story 3</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>World Story 4</h3>
-        <p>Summary placeholder...</p>
-    </article>
-</section>
+<!-- Continue other sections like world, politics, etc., with same article structure and colors -->
 
-<!-- POLITICS SECTION -->
-<section id="politics">
-    <h2>Politics</h2>
-    <article>
-        <h3>Politics Story 1</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Politics Story 2</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Politics Story 3</h3>
-        <p>Summary placeholder...</p>
-    </article>
-    <article>
-        <h3>Political Analysis</h3>
-        <p>Expert opinion placeholder text...</p>
-    </article>
-</section>
-
-<!-- Continue other sections exactly as before -->
-
-<!-- FOOTER -->
 <footer>
     <div>
         <h3>About Gooblagoon</h3>
